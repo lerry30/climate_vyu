@@ -87,7 +87,7 @@ Make sure it ends with api.
 ## Screenshots
 
 <p align="center">
-  <img src="climate_vyu_07_2026" width="48%" alt="Home Screen">
+  <img src="climate_vyu_07_2026.png" width="48%" alt="Home Screen">
 </p>
 
 ## License
