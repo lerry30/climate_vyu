@@ -1,0 +1,44 @@
+{
+	"coord": {
+		"lon": 120.9833,
+		"lat": 15.2833
+  	},
+	"weather": [
+		{
+			"id": 804,
+			"main": "Clouds",
+			"description": "overcast clouds",
+			"icon": "04n"
+		}
+	],
+	"base": "stations",
+	"main": {
+		"temp": 296.78,
+		"feels_like": 297.52,
+		"temp_min": 296.78,
+		"temp_max": 296.78,
+		"pressure": 1005,
+		"humidity": 89,
+		"sea_level": 1005,
+		"grnd_level": 1005
+	},
+	"visibility": 10000,
+	"wind": {
+		"speed": 1.49,
+		"deg": 17,
+		"gust": 1.62
+	},
+	"clouds": {
+		"all": 100
+	},
+	"dt": 1768672892,
+	"sys": {
+		"country": "PH",
+		"sunrise": 1768688761,
+		"sunset": 1768729572
+	},
+	"timezone": 28800,
+	"id": 1713227,
+	"name": "City of Gapan",
+	"cod": 200
+}

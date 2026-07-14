@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+body {
+    @apply font-sans;
+}
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background: theme('colors.gray.200');
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: theme('colors.gray.500');
+  border-radius: 9999px;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: large;
+  scrollbar-color: #6b7280 #a1a5ac07;
+}
