@@ -41,6 +41,15 @@ Climate Vyi is a modern weather forecast application that allows users to view r
 | Joho Godotenv | Load Environment Variables |
 | OpenWeather API | Weather Forecast Data |
 
+## Project Structure
+
+```text
+climate_vyi/
+├── backend/             # Go API server
+├── frontend/            # React application
+└── README.md
+```
+
 ## Getting Started
 
 ### Prerequisites
@@ -89,6 +98,20 @@ Make sure it ends with api.
 <p align="center">
   <img src="climate_vyu_07_2026.png" width="80%" alt="Dashboard">
 </p>
+
+## Production
+
+### Build Command
+
+```bash
+cd frontend && npm install && npm run build && cd ../backend && go build -o app . 
+```
+
+### Start Command
+
+```bash
+cd backend && ./app
+```
 
 ## License
 
