@@ -132,3 +132,9 @@ func (apiServer *APIServer) Forecast(w http.ResponseWriter, r *http.Request) err
 
 	return nil
 }
+
+// Render's ping heath check api for preventing site inactivity and cold-start delay (basically waking the site up)
+func (apiServer *APIServer) Health(w http.ResponseWriter, r *http.Request) error {
+	ResponseJSON(w, http.StatusOK, struct{ Message string }{Message: "ok"})
+	return nil
+}

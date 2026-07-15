@@ -44,6 +44,8 @@ func (apiServer *APIServer) Run() {
 	router.HandleFunc("/api/filter/{city}", makeHTTPHandleFunc(apiServer.FilterCity)).Methods("GET")
 	router.HandleFunc("/api/search/{city}", makeHTTPHandleFunc(apiServer.SearchCity)).Methods("GET")
 	router.HandleFunc("/api/forecast/{city}", makeHTTPHandleFunc(apiServer.Forecast)).Methods("GET")
+	// Render's ping heath check api for preventing site inactivity and cold-start delay (basically waking the site up)
+	router.HandleFunc("/api/health", makeHTTPHandleFunc(apiServer.Health)).Methods("GET")
 
 	//fs := http.FileServer(http.Dir("../frontend/dist"))
 	router.PathPrefix("/").Handler(spaHandler("../frontend/dist"))
