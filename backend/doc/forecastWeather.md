@@ -1,17 +1,15 @@
-package models
+# Forecast Weather
 
-import (
-	//"encoding/json"
-	"fmt"
-	"time"
+What we got from Open Weather API's weather forecast data:
 
-	"backend/utils"
-)
+We have 40 items in a list, and this list represents 5 days of the weather forecast. 
+So, 40/5 is 8, 8 sets of data in a day, which means that we have reports every 3 hours in a day.
 
-// We have 40 items in a list, and this list represents 5 days of the weather forecast.
-// So, 40/5 is 8, 8 sets of data in a day, which means that we have reports every 3 hours
-// in a day.
+## Structs
 
+A struct for 3 hour weather data. 
+
+```go
 type WeatherForecastThreeHourInterval struct {
 	Temp               string    `json:"temp"`
 	FeelsLike          string    `json:"feels_like"`
@@ -28,12 +26,22 @@ type WeatherForecastThreeHourInterval struct {
 	DateTimeGMT        string    `json:"date_time"`
 	LocalDateTime      time.Time `json:"local_date_time"`
 }
+```
 
+Day of the week simply implies one of the seven named days(Monday-Sunday).
+The <code>DayOfTheWeek</code> is used as a key to easily map and display specific day.
+<code>HourWeatherUpdates</code> contains 8 sets of weather data in a day.
+
+```go
 type WeatherForecastWeekDay struct {
 	DayOfTheWeek       string                             `json:"day_of_the_week"`
 	HourWeatherUpdates []WeatherForecastThreeHourInterval `json:"hour_weather_updates"`
 }
+```
 
+Main struct with all the properties needed.
+
+```go
 type ForecastWeatherData struct {
 	CityName string                   `json:"city_name"`
 	Country  string                   `json:"country"`
@@ -41,11 +49,21 @@ type ForecastWeatherData struct {
 	Sunset   time.Time                `json:"sunset"`
 	List     []WeatherForecastWeekDay `json:"list"`
 }
+```
 
+## Constructor
+
+```go
 func NewForecastWeatherData() *ForecastWeatherData {
 	return &ForecastWeatherData{}
 }
+```
 
+## Method
+
+<code>TransformForecastWeatherValues(*RawForecastWeatherData)</code> transforms raw weather data to human readable data. But the main goal here is to structured the data so it can easily display in the dashboard.
+
+```go
 func (fw *ForecastWeatherData) TransformForecastWeatherValues(raw *RawForecastWeatherData) {
 	if len(raw.List) == 0 {
 		return
@@ -146,3 +164,4 @@ func (fw *ForecastWeatherData) TransformForecastWeatherValues(raw *RawForecastWe
 	//d, _ := json.MarshalIndent(fw, "", "	")
 	//fmt.Println(string(d))
 }
+```

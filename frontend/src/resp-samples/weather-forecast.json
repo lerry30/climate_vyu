@@ -5,7 +5,7 @@
     "sunset": "2026-01-22T17:48:27+08:00",
     "list": [
         {
-            "weekday": "Thursday",
+            "day_of_the_week": "Thursday",
             "hour_weather_updates": [
                 {
                     "temp": "23.58°C",
@@ -122,7 +122,7 @@
             ]
         },
         {
-            "weekday": "Friday",
+            "day_of_the_week": "Friday",
             "hour_weather_updates": [
                 {
                     "temp": "19.49°C",
@@ -239,7 +239,7 @@
             ]
         },
         {
-            "weekday": "Saturday",
+            "day_of_the_week": "Saturday",
             "hour_weather_updates": [
                 {
                     "temp": "20.10°C",
@@ -356,7 +356,7 @@
             ]
         },
         {
-            "weekday": "Sunday",
+            "day_of_the_week": "Sunday",
             "hour_weather_updates": [
                 {
                     "temp": "20.92°C",
@@ -473,7 +473,7 @@
             ]
         },
         {
-            "weekday": "Monday",
+            "day_of_the_week": "Monday",
             "hour_weather_updates": [
                 {
                     "temp": "22.26°C",

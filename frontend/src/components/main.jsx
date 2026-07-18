@@ -131,7 +131,7 @@ const Main = () => {
                                 className="w-full flex flex-col justify-center items-center p-4 cursor-pointer bg-gray-900 text-white rounded-lg shadow-sm"
                                 onClick={() => setSelectedDay(updates)}
                             >
-                                <span className="font-light font-sans text-2xl mb-2">{wf?.weekday}</span>
+                                <span className="font-light font-sans text-2xl mb-2">{wf?.day_of_the_week}</span>
                                 <img src={updates.icon} alt="Weather Icon" className="mb-2" />
                                 <p className="font-sans font-semibold">{dt.toLocaleString('en-US', {hour: 'numeric', hour12: true})}</p>
                             </div>

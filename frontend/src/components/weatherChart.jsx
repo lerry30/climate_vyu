@@ -20,7 +20,7 @@ const prepareChartData = (weatherList) => {
             const feelsLike = parseFloat(hour.feels_like.replace('°C', ''));
 
             // Short format: Mon 18:00
-            const timeLabel = `${day.weekday.slice(0, 3)} ${new Date(hour.local_date_time).getHours().toString().padStart(2, '0')}:00`;
+            const timeLabel = `${day.day_of_the_week.slice(0, 3)} ${new Date(hour.local_date_time).getHours().toString().padStart(2, '0')}:00`;
 
             data.push({
                 time: timeLabel,

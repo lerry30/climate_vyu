@@ -20,16 +20,21 @@ type FilteredCities struct {
 // methods
 
 func (c *City) Filter() (FilteredCities, error) {
-	alphabet := [26]string{"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"}
-	var prefix string
-
 	str := strings.ToLower(c.Name)
 
-	for _, a := range alphabet {
-		if strings.HasPrefix(str, a) {
-			prefix = a
-			break
-		}
+	// Indexing string like str[0] gives you a byte(uint8) not a
+	// character. So, a byte(str[0]) can perform checks like
+	// str[0] >= 'a' && str[0] <= 'z', but it would break on multi-byte
+	// UTF-8 characters(accented letters, non-Latin scripts, etc.). If
+	// c.Name could contain not-ASCII names, so first convert it to runes.
+	runes := []rune(str)
+	var prefix string
+
+	// Why len(runes) matters: indexing str[0] on an empty string
+	// panics, so guard it first.
+	// For more robust checks, use unicode.IsLetter + unicode.IsLower
+	if len(runes) > 0 && runes[0] >= 'a' && runes[0] <= 'z' {
+		prefix = string(runes[0])
 	}
 
 	if prefix == "" {

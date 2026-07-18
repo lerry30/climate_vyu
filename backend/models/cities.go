@@ -1,11 +1,11 @@
 package models
 
 import (
+	"bytes"
 	"fmt"
 	"os"
-	"bytes"
-	"strings"
 	"slices"
+	"strings"
 
 	"encoding/json"
 
@@ -13,13 +13,13 @@ import (
 )
 
 type Record struct {
-	ID string `json:"owm_city_id"`
-	CityName string `json:"owm_city_name"`
-	Lat string `json:"owm_latitude"`
-	Long string `json:"owm_longitude"`
+	ID           string `json:"owm_city_id"`
+	CityName     string `json:"owm_city_name"`
+	Lat          string `json:"owm_latitude"`
+	Long         string `json:"owm_longitude"`
 	CountryShort string `json:"country_short"`
-	Country string `json:"country_long"`
-	PostalCode string `json:"postal_code"`
+	Country      string `json:"country_long"`
+	PostalCode   string `json:"postal_code"`
 }
 
 type Cities struct {

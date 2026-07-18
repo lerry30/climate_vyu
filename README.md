@@ -2,6 +2,16 @@
 
 Climate Vyi is a modern weather forecast application that allows users to view real-time weather conditions through a clean and interactive user interface.
 
+## Live Demo
+
+<a href="https://climate-vyu.onrender.com/" target="_blank">https://climate-vyu.onrender.com</a>
+
+## Screenshots
+
+<p align="center">
+  <img src="climate_vyu_07_2026.png" width="80%" alt="Dashboard">
+</p>
+
 ## Features
 
 - View current weather conditions
@@ -92,12 +102,6 @@ VITE_API_URL=http://localhost:8080/api
 ```
 
 Make sure it ends with api.
-
-## Screenshots
-
-<p align="center">
-  <img src="climate_vyu_07_2026.png" width="80%" alt="Dashboard">
-</p>
 
 ## Production
 
