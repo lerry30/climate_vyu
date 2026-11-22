@@ -1,6 +1,5 @@
 import { useRef, useEffect } from 'react';
 
-
 const Tooltip = ({text, children}) => {
     const tooltip = useRef(null);
     const point = useRef(null);
@@ -22,6 +21,7 @@ const Tooltip = ({text, children}) => {
         
         // bottom
         if(top < 0) {
+            tooltip.current.style.top = `${rect.height}px`;
             tooltip.current.style.bottom = `-${rect.height+4}px`;
             point.current.style.cssText = `
                 bottom: none;
@@ -32,6 +32,14 @@ const Tooltip = ({text, children}) => {
             `;
         } else {
             tooltip.current.style.top = `-${rect.height+4}px`;
+            tooltip.current.style.bottom = `${rect.height}px`;
+            point.current.style.cssText = `
+                bottom: -4px;
+                top: none;
+                border: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+                border-right: 1px solid rgba(255, 255, 255, 0.45);
+            `;
         }
     }
     
